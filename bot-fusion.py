@@ -35,7 +35,7 @@ def send_daily_message():
             # Vérifie si le titre du thread contient "Test_fusion"
             if "Test_fusion" in thread.thread_title:
                 # Envoie le message au groupe
-                cl.direct_send("Message automatique envoyé à 08h00 🌙", thread_ids=[thread.id])
+                cl.direct_send("Actions du jour 🔥", thread_ids=[thread.id])
                 print(f"Message envoyé au groupe: {thread.thread_title}")
                 break
         else:
@@ -43,8 +43,8 @@ def send_daily_message():
     except Exception as e:
         print("Erreur lors de l'envoi du message :", e)
 
-# Programmer l'envoi quotidien à 08h00
-schedule.every().day.at("08:00").do(send_daily_message)
+# Programmer l'envoi quotidien à 23h00
+schedule.every().day.at("22:58").do(send_daily_message)
 
 # Boucle infinie qui vérifie l'heure
 try:
